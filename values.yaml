@@ -6,17 +6,17 @@
 #     provider: "aws" # Options: aws, cloudflare, google, etc.
 #     domainFilter: "example.com"
 
-# Storage Configuration
-storage:
-  enabled: true
-  provisioner: "longhorn"
-  persistentVolumes:
-    - name: "pv1"
-      size: "1Gi"
-      storageClass: "longhorn"
-    - name: "pv2"
-      size: "2Gi"
-      storageClass: "longhorn"
+# # Storage Configuration
+# storage:
+#   enabled: true
+#   provisioner: "longhorn"
+#   persistentVolumes:
+#     - name: "pv1"
+#       size: "1Gi"
+#       storageClass: "longhorn"
+#     - name: "pv2"
+#       size: "2Gi"
+#       storageClass: "longhorn"
 
 # Monitoring & Logging Configuration
 monitoring:
@@ -31,7 +31,7 @@ monitoring:
     adminPassword: "supersecurepassword"
   loki:
     enabled: true
-    storageSize: "10Gi"
+    storageSize: "5Gi"
 
 # Security & Access Control
 # security:
@@ -69,17 +69,17 @@ monitoring:
 #   annotations:
 #     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 
-# Longhorn (Storage) Configuration
-longhorn:
-  enabled: true
-  defaultDataPath: "/var/lib/longhorn/"
-  replicas: 3
+# # Longhorn (Storage) Configuration
+# longhorn:
+#   enabled: true
+#   defaultDataPath: "/var/lib/longhorn/"
+#   replicas: 3
 
-# Cluster Services
-clusterServices:
-  kubeStateMetrics:
-    enabled: true
-  nodeExporter:
-    enabled: true
-  alertManager:
-    enabled: true
+# # Cluster Services
+# clusterServices:
+#   kubeStateMetrics:
+#     enabled: true
+#   nodeExporter:
+#     enabled: true
+#   alertManager:
+#     enabled: true
