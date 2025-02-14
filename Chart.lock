@@ -1,0 +1,12 @@
+dependencies:
+- name: longhorn
+  repository: https://charts.longhorn.io
+  version: 1.8.0
+- name: kube-prometheus-stack
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 45.0.0
+- name: loki
+  repository: https://grafana.github.io/helm-charts
+  version: 2.5.0
+digest: sha256:ff16969e4f5666007ac02b20a0fd83ce2c80df74285135f758635937caa3fc75
+generated: "2025-02-10T13:07:18.4686731+01:00"

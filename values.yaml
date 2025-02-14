@@ -1,0 +1,85 @@
+# Networking Configuration
+# networking:
+#   ingressController: "nginx"
+#   externalDNS:
+#     enabled: true
+#     provider: "aws" # Options: aws, cloudflare, google, etc.
+#     domainFilter: "example.com"
+
+# Storage Configuration
+storage:
+  enabled: true
+  provisioner: "longhorn"
+  persistentVolumes:
+    - name: "pv1"
+      size: "1Gi"
+      storageClass: "longhorn"
+    - name: "pv2"
+      size: "2Gi"
+      storageClass: "longhorn"
+
+# Monitoring & Logging Configuration
+monitoring:
+  enabled: true
+  prometheus:
+    enabled: true
+    retention: "10d"
+    storageSize: "1Gi"
+  grafana:
+    enabled: true
+    adminUser: "admin"
+    adminPassword: "supersecurepassword"
+  loki:
+    enabled: true
+    storageSize: "10Gi"
+
+# Security & Access Control
+# security:
+#   rbac:
+#     enabled: true
+#   networkPolicies:
+#     enabled: true
+#   kyverno:
+#     enabled: true
+#   sealedSecrets:
+#     enabled: true
+
+# # Cert-Manager Configuration
+# certManager:
+#   enabled: true
+#   issuer:
+#     name: "letsencrypt-prod"
+#     email: "admin@example.com"
+#     server: "https://acme-v02.api.letsencrypt.org/directory"
+#   dnsSolver:
+#     provider: "cloudflare"
+#     credentialsSecretName: "cloudflare-api-secret"
+
+# # ExternalDNS Configuration
+# externalDNS:
+#   enabled: true
+#   provider: "cloudflare"
+#   domainFilter: "example.com"
+
+# # Ingress Controller (NGINX) Configuration
+# ingress:
+#   enabled: true
+#   className: "nginx"
+#   loadBalancerIP: "auto"
+#   annotations:
+#     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+
+# Longhorn (Storage) Configuration
+longhorn:
+  enabled: true
+  defaultDataPath: "/var/lib/longhorn/"
+  replicas: 3
+
+# Cluster Services
+clusterServices:
+  kubeStateMetrics:
+    enabled: true
+  nodeExporter:
+    enabled: true
+  alertManager:
+    enabled: true
